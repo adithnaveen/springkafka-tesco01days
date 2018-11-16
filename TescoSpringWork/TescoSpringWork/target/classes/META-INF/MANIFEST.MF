@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: TescoSpringWork
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Naveen
+Implementation-Vendor-Id: com.spring.kafka
+Build-Jdk: 1.8.0_131
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/TescoSpringWork
+Created-By: Maven Integration for Eclipse
+
