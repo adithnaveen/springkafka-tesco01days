@@ -1,0 +1,109 @@
+// to start the zookeeper 
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+// start kafka server 
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+// create a topic (You can have multiple topics) 
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic topic1
+
+-- to list all the topics 
+.\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --list
+
+--create a producer 
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic topic1 
+
+-- create a consumer 
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server  localhost:9092 --topic topic1
+
+-- describe the topic 
+.\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --topic topic1 --describe
+
+-- the consumer is started with the group id, to the consumer shall take the data only from the group id specified and every time the consumer is down, kafka ensures that the messages are kept in the buffer once the consumer is up with the group id only those messages are give which had left 
+
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic topic1 --consumer-property group.id=gp2
+
+-- to get the list of consumers for the server 
+.\bin\windows\kafka-consumer-groups.bat  --list --bootstrap-server localhost:9092
+
+
+
+    public void onCompletion(RecordMetadata metadata, Exception exception);
+}
+
+
+
+try{
+	BuferedReader br = null; 
+		
+		try{
+			br = new BufferedReader(new 
+				FileReader("Sample.txt"));
+		}catch(){
+			throw some excpetion 
+		}finally {
+			br.close(); 
+		}
+}
+
+
+try(BuferedReader br= new BufferedReader(new 
+				FileReader("Sample.txt"));){
+		// do you reading 
+}
+
+
+
+class Car {
+	public static Car getMyCar(String carName){
+		if(carName.equals("bmw"){
+			return new BMW();
+		} else if(carName.equals("audi"){
+			return new AUDI();
+		} else if(carName.equals("maruti"){
+			return new Maruti();
+		}
+	}
+}
+
+
+class Audi extends Car {
+	Audi(){}
+}
+
+class BMW  extends Car {
+	BMW(){}
+}
+
+class Maruti extends Car {
+	Maruti(){}
+}
+
+
+
+
+
+
+Car car = Car.getMyCar("bmw"); 
+
+
+
+
+Contact 
+http://naveenks.com
+adith.naveen@gmail.com
++91 9900 524 255
+
+
+
+http://bit.ly/2RTYq22
+
+
+
+
+
+
+
+
+
